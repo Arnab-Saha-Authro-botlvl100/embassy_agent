@@ -72,5 +72,19 @@ return [
     'links' => [
         public_path('storage') => storage_path('app/public'),
     ],
+    'disks' => [
+        'public' => [
+            'driver' => 'local',
+            'root'   => public_path() . '/uploads',
+            'url' => env('APP_URL').'/public',
+            'visibility' => 'public',
+        ],
+        'custom' => [
+            'driver' => 'local',
+            'root' => public_path('images'), // Specify the 'images' directory
+            'url' => env('APP_URL') . '/images', // URL for the 'images' directory
+            'visibility' => 'public',
+        ],
+     ]
 
 ];
